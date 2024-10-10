@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell
+    x:Class="BookiMaui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BookiMaui"
+    xmlns:contentPages="clr-namespace:BookiMaui.Views.ContentPages"
+    xmlns:contentViews="clr-namespace:BookiMaui.Views.ContentViews"
+    Shell.FlyoutBehavior="Flyout"
+    TabBarForegroundColor="Blue"
+    Title="BookiMaui">
+
+    <Shell.FlyoutHeader>
+        <contentViews:ShellHeaderContentView />
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="About" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Accueil">
+            <ShellContent Title="Hébergements"
+                          
+                          ContentTemplate="{DataTemplate contentPages:HostContentPage}" />
+            <ShellContent Title="Activités"
+                          ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+    </FlyoutItem>
+    <ShellContent Title="A propos"
+                  ContentTemplate="{DataTemplate contentPages:AboutContentPage}"/>
+    <ShellContent Title="Nos hébergements"
+                  ContentTemplate="{DataTemplate contentPages:OurHostingContentPage}"/>
+    <ShellContent Title="Assistance"
+                  ContentTemplate="{DataTemplate contentPages:OurHostingContentPage}"/>
+</Shell>

@@ -1,0 +1,78 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property.TargetFramework = net8.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BookiMaui
+build_property.ProjectDir = /Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/Views/ContentPages/AboutContentPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.Views.ContentPages.AboutContentPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ContentPages/AboutContentPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ContentPages/AboutContentPage.xaml
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/Views/ContentPages/ActivitiesContentPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.Views.ContentPages.ActivitiesContentPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ContentPages/ActivitiesContentPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ContentPages/ActivitiesContentPage.xaml
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/Views/ContentPages/HostContentPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.Views.ContentPages.HostContentPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ContentPages/HostContentPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ContentPages/HostContentPage.xaml
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/Views/ContentPages/OurHostingContentPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.Views.ContentPages.OurHostingContentPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ContentPages/OurHostingContentPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ContentPages/OurHostingContentPage.xaml
+
+[/Users/loicbastaraud/RiderProjects/BookiMaui/BookiMaui/Views/ContentViews/ShellHeaderContentView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BookiMaui.Views.ContentViews.ShellHeaderContentView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ContentViews/ShellHeaderContentView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ContentViews/ShellHeaderContentView.xaml

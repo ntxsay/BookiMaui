@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:BookiMaui.ViewModels.Objects"
+             xmlns:contentPages="clr-namespace:BookiMaui.ViewModels.ContentPages"
+             x:Class="BookiMaui.Views.ContentPages.HostContentPage">
+    <ContentPage.BindingContext>
+        <contentPages:HostContentPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="20" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <VerticalStackLayout Spacing="4"
+                                 Margin="0,20,0,0">
+                <Label Text="Trouvez votre hébergement pour des vacances de rêve"
+                       FontFamily="Raleway"
+                       FontAttributes="Bold"
+                       FontSize="22" />
+                <Label Text="En plein centre-ville ou en pleine nature"
+                       FontFamily="Raleway"
+                       FontSize="16" />
+                <Grid HeightRequest="50" Margin="0,30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="49" />
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            StrokeThickness="1"
+                            BackgroundColor="#F2F2F2"
+                            StrokeShape="{RoundRectangle 15}"
+                            HeightRequest="49"
+                            Margin="0,0,10,0">
+                        <Entry Placeholder="Marseille, France"
+                               BackgroundColor="White"
+                               FontFamily="Raleway"
+                               FontAttributes="Bold"
+                               FontSize="18" />
+                    </Border>
+                    <Border
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HeightRequest="49"
+                        WidthRequest="50"
+                        BackgroundColor="#F2F2F2"
+                        StrokeThickness="1"
+                        HorizontalOptions="Start">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15,0,15,0" />
+                        </Border.StrokeShape>
+                        <Image Source="location_dot_solid.png"
+                               HeightRequest="18" />
+                    </Border>
+                    <ImageButton Grid.Column="2"
+                                 BackgroundColor="blue"
+                                 Source="search.png"
+                                 CornerRadius="15"
+                                 Padding="17">
+                    </ImageButton>
+                </Grid>
+                <Label Text="Filtres"
+                       FontFamily="Raleway"
+                       FontAttributes="Bold"
+                       FontSize="18" />
+            </VerticalStackLayout>
+            <CollectionView Grid.Row="1" 
+                            ItemsSource="{Binding Filters}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2"
+                                     VerticalItemSpacing="20"
+                                     HorizontalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewModels:FilterItemViewModel">
+                        <Border StrokeThickness="1"
+                                BackgroundColor="#F2F2F2"
+                                HeightRequest="49"
+                                Margin="0,0,0,0"
+                                Padding="18,0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="25" />
+                            </Border.StrokeShape>
+                            <Grid HeightRequest="50" ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="22" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding ImageSource, Mode=OneWay}"
+                                       HeightRequest="22"
+                                       WidthRequest="22" />
+                                <Label Grid.Column="1"
+                                       Text="{Binding Name, Mode=OneWay}"
+                                       FontFamily="Raleway"
+                                       FontAttributes="Bold"
+                                       FontSize="16" 
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
