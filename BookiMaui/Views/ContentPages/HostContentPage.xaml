@@ -5,107 +5,243 @@
              xmlns:viewModels="clr-namespace:BookiMaui.ViewModels.Objects"
              xmlns:contentPages="clr-namespace:BookiMaui.ViewModels.ContentPages"
              x:Class="BookiMaui.Views.ContentPages.HostContentPage">
+    <ContentPage.Resources>
+        <OnPlatform x:Key="FilterItemsLayout"
+                    x:TypeArguments="ItemsLayout">
+            <On Platform="iOS">
+                <On.Value>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="2"
+                        VerticalItemSpacing="20"
+                        HorizontalItemSpacing="10" />
+                </On.Value>
+            </On>
+            <On Platform="Android">
+                <On.Value>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="2"
+                        VerticalItemSpacing="20"
+                        HorizontalItemSpacing="10" />
+                </On.Value>
+            </On>
+            <On Platform="MacCatalyst">
+                <On.Value>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" />
+                </On.Value>
+            </On>
+            <On Platform="WinUI">
+                <On.Value>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" />
+                </On.Value>
+            </On>
+        </OnPlatform>
+    </ContentPage.Resources>
     <ContentPage.BindingContext>
         <contentPages:HostContentPageViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Grid Margin="20" RowSpacing="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <VerticalStackLayout Spacing="4"
-                                 Margin="0,20,0,0">
-                <Label Text="Trouvez votre hébergement pour des vacances de rêve"
-                       FontFamily="Raleway"
-                       FontAttributes="Bold"
-                       FontSize="22" />
-                <Label Text="En plein centre-ville ou en pleine nature"
-                       FontFamily="Raleway"
-                       FontSize="16" />
-                <Grid HeightRequest="50" Margin="0,30">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="48" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="49" />
-                    </Grid.ColumnDefinitions>
-                    <Border Grid.Column="1"
+        <ScrollView>
+            <Grid RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="160" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <!-- En tete et recherche -->
+                <VerticalStackLayout Spacing="4"
+                                     Margin="20">
+                    <Label Text="Trouvez votre hébergement pour des vacances de rêve"
+                           FontFamily="Raleway"
+                           FontAttributes="Bold"
+                           FontSize="22" />
+                    <Label Text="En plein centre-ville ou en pleine nature"
+                           FontFamily="Raleway"
+                           FontSize="16" />
+                    <Grid HeightRequest="50" Margin="0,30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="49" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1"
+                                Grid.ColumnSpan="2"
+                                StrokeThickness="1"
+                                BackgroundColor="#F2F2F2"
+                                StrokeShape="{RoundRectangle 15}"
+                                HeightRequest="49"
+                                Margin="0,0,10,0">
+                            <Entry Placeholder="Marseille, France"
+                                   BackgroundColor="White"
+                                   FontFamily="Raleway"
+                                   FontAttributes="Bold"
+                                   FontSize="18" />
+                        </Border>
+                        <Border
+                            Grid.Column="0"
                             Grid.ColumnSpan="2"
-                            StrokeThickness="1"
-                            BackgroundColor="#F2F2F2"
-                            StrokeShape="{RoundRectangle 15}"
                             HeightRequest="49"
-                            Margin="0,0,10,0">
-                        <Entry Placeholder="Marseille, France"
-                               BackgroundColor="White"
-                               FontFamily="Raleway"
-                               FontAttributes="Bold"
-                               FontSize="18" />
-                    </Border>
+                            WidthRequest="50"
+                            BackgroundColor="#F2F2F2"
+                            StrokeThickness="1"
+                            HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="15,0,15,0" />
+                            </Border.StrokeShape>
+                            <Image Source="location_dot_solid.png"
+                                   HeightRequest="18" />
+                        </Border>
+                        <ImageButton Grid.Column="2"
+                                     BackgroundColor="blue"
+                                     Source="search.png"
+                                     CornerRadius="15"
+                                     Padding="17">
+                        </ImageButton>
+                    </Grid>
+                    <Label Text="Filtres"
+                           FontFamily="Raleway"
+                           FontAttributes="Bold"
+                           FontSize="18" />
+                </VerticalStackLayout>
+                <!-- Filtres -->
+                <CollectionView Grid.Row="1"
+                                Margin="20, 0, 20, 20"
+                                ItemsSource="{Binding Filters}" ItemsLayout="{StaticResource FilterItemsLayout}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="viewModels:FilterItemViewModel">
+                            <Border StrokeThickness="1"
+                                    BackgroundColor="#F2F2F2"
+                                    HeightRequest="49"
+                                    MaximumHeightRequest="50"
+                                    Margin="0,0,0,0"
+                                    Padding="18,0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="25" />
+                                </Border.StrokeShape>
+                                <Grid HeightRequest="50" ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="22" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding ImageSource, Mode=OneWay}"
+                                           HeightRequest="22"
+                                           WidthRequest="22" />
+                                    <Label Grid.Column="1"
+                                           Text="{Binding Name, Mode=OneWay}"
+                                           FontFamily="Raleway"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           VerticalOptions="Center" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <!-- infos -->
+                <Grid Grid.Row="2"
+                      Margin="20, 0, 20, 20"
+                      ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
                     <Border
                         Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        HeightRequest="49"
-                        WidthRequest="50"
-                        BackgroundColor="#F2F2F2"
-                        StrokeThickness="1"
-                        HorizontalOptions="Start">
+                        StrokeThickness="2"
+                        Stroke="#F2F2F2"
+                        BackgroundColor="White"
+                        HeightRequest="40"
+                        WidthRequest="40">
                         <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="15,0,15,0" />
+                            <RoundRectangle CornerRadius="20" />
                         </Border.StrokeShape>
-                        <Image Source="location_dot_solid.png"
+                        <Image Source="info.png"
                                HeightRequest="18" />
                     </Border>
-                    <ImageButton Grid.Column="2"
-                                 BackgroundColor="blue"
-                                 Source="search.png"
-                                 CornerRadius="15"
-                                 Padding="17">
-                    </ImageButton>
+                    <Label Grid.Column="1"
+                           Text="Plus de 500 logements sont disponibles dans cette ville"
+                           FontFamily="Raleway"
+                           FontSize="16" />
                 </Grid>
-                <Label Text="Filtres"
-                       FontFamily="Raleway"
-                       FontAttributes="Bold"
-                       FontSize="18" />
-            </VerticalStackLayout>
-            <CollectionView Grid.Row="1" 
-                            ItemsSource="{Binding Filters}">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical"
-                                     Span="2"
-                                     VerticalItemSpacing="20"
-                                     HorizontalItemSpacing="10" />
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="viewModels:FilterItemViewModel">
-                        <Border StrokeThickness="1"
-                                BackgroundColor="#F2F2F2"
-                                HeightRequest="49"
-                                Margin="0,0,0,0"
-                                Padding="18,0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="25" />
-                            </Border.StrokeShape>
-                            <Grid HeightRequest="50" ColumnSpacing="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="22" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{Binding ImageSource, Mode=OneWay}"
-                                       HeightRequest="22"
-                                       WidthRequest="22" />
-                                <Label Grid.Column="1"
-                                       Text="{Binding Name, Mode=OneWay}"
-                                       FontFamily="Raleway"
-                                       FontAttributes="Bold"
-                                       FontSize="16" 
-                                       VerticalOptions="Center"/>
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-        </Grid>
+                <VerticalStackLayout Grid.Row="3"
+                                     Padding="20"
+                                     BackgroundColor="#F2F2F2"
+                                     Spacing="20">
+                    <Grid ColumnSpacing="10" HeightRequest="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            VerticalOptions="Center"
+                            Text="Les plus populaires"
+                            FontFamily="Raleway"
+                            FontAttributes="Bold"
+                            FontSize="22" />
+                        <Image Grid.Column="1"
+                               VerticalOptions="Center"
+                               Source="trending.png"
+                               HeightRequest="48" />
+                    </Grid>
+                    <VerticalStackLayout
+                        BindableLayout.ItemsSource="{Binding PopularHosts}"
+                        Spacing="20">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="viewModels:HostItemViewModel">
+                                <Frame CornerRadius="25"
+                                       BackgroundColor="White"
+                                       HeightRequest="160"
+                                       Padding="10"
+                                       BorderColor="White"
+                                       HasShadow="True">
+                                    <Grid ColumnSpacing="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0"
+                                                StrokeThickness="1"
+                                                BackgroundColor="#F2F2F2"
+                                                WidthRequest="112">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="25,0,25,0" />
+                                            </Border.StrokeShape>
+                                            <Image
+                                                Source="{Binding ImageSource, Mode=OneWay}"
+                                                Aspect="AspectFill" />
+                                        </Border>
+                                        <VerticalStackLayout Grid.Column="1"
+                                                             Margin="5 ,10, 5, 10"
+                                                             Spacing="5">
+                                            <Label
+                                                Text="{Binding Name, Mode=OneWay}"
+                                                FontFamily="Raleway"
+                                                FontAttributes="Bold"
+                                                FontSize="18"
+                                                LineBreakMode="WordWrap"
+                                                VerticalOptions="Center" />
+                                            <HorizontalStackLayout Spacing="4">
+                                                <Label Text="Nuit à partir de"
+                                                       FontFamily="Raleway"
+                                                       FontAttributes="None"
+                                                       FontSize="14" />
+                                                <Label
+                                                    Text="{Binding Price, StringFormat='{0:N0} €', Mode=OneWay}"
+                                                    FontFamily="Raleway"
+                                                    FontAttributes="None"
+                                                    FontSize="14"
+                                                    VerticalOptions="Center" />
+                                            </HorizontalStackLayout>
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

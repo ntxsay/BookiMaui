@@ -12,6 +12,10 @@
 		<data>
 		6R3ewBVPhsROOs74l5Av8g6KiYs=
 		</data>
+		<key>Resources/MauiInfo.plist</key>
+		<data>
+		ndTa8ClfeLQ2buGQVgqlcLSR5SM=
+		</data>
 		<key>Resources/MonoTouchDebugConfiguration.txt</key>
 		<data>
 		oowkf1sL6T19nanXUObgmuayWqM=
@@ -187,14 +191,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2vPnqtqsPquTl0ef9NEjOYeFmMxqeejfDbUW5mFDGqQ=
+			V93sJKqZK9Mm4mkSqS4nO+rZCIRGYpDfwn+xInxZpm4=
 			</data>
 		</dict>
 		<key>MonoBundle/BookiMaui.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zFZvab3xR52XBaTciodyligpgBBXkVU5jbRNmU5nft0=
+			EyAMddI3okmZqEx1WU2TjHQXX6qAOMVCS37NKaMo/6U=
+			</data>
+		</dict>
+		<key>MonoBundle/CommunityToolkit.Mvvm.dll</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8ni2zfKv8v+yfwHYPIirGvVA1FtBEpJ082fuvGAawAs=
 			</data>
 		</dict>
 		<key>MonoBundle/Microsoft.CSharp.dll</key>
@@ -1489,7 +1500,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YTHJK1TEabawRuE+kLdIpWtmrKMcgtSy5Q+RKmyKVck=
+			yGq+ymUpmuMxANyRI5Ef0qnZdPHQnIz57uVjow5EU4E=
 			</data>
 		</dict>
 		<key>MonoBundle/ar/Microsoft.Maui.Controls.resources.dll</key>
@@ -1692,7 +1703,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZlFfGnlC3L3W79Mk7oFQBLObWxc/8JPosJSOWBQDNpc=
+			33fLfq8F8YJzr1dQWdtzxvqXTqbGOq2MCFrtTEGQsZM=
 			</data>
 		</dict>
 		<key>MonoBundle/sk/Microsoft.Maui.Controls.resources.dll</key>
@@ -1770,6 +1781,13 @@
 			<key>hash2</key>
 			<data>
 			veU4ABCL6/sXVIAMPRaUvKg28hNkrLkTfvfMQaiAyQ0=
+			</data>
+		</dict>
+		<key>Resources/MauiInfo.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jvpxALovD7D77CAAS68oySGGHlMd6TzudtYUJpANUzI=
 			</data>
 		</dict>
 		<key>Resources/MonoTouchDebugConfiguration.txt</key>

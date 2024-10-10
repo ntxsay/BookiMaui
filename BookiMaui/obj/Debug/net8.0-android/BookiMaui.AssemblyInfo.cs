@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookiMaui")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+25ed4cbe7e856b0ebbc60985251e1faa7c719f2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookiMaui")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookiMaui")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

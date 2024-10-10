@@ -29,7 +29,30 @@ public class HostContentPageViewModel : ObservableObject
             Name = "Nos pépites" ,
             ImageSource = ImageSource.FromFile("fire.png")
         });
+        
+        PopularHosts.Add(new HostItemViewModel()
+        {   
+            Name = "Hôtel Le soleil du matin",
+            Price = 128,
+            ImageSource = ImageSource.FromFile("emile_guillemot.jpg")
+        });
+
+        PopularHosts.Add(new HostItemViewModel()
+        {   
+            Name = "Chambres d’hôtes Au cœur de l’eau",
+            Price = 71,
+            ImageSource = ImageSource.FromFile("aw_creative.jpg")
+        });
+        
+        PopularHosts.Add(new HostItemViewModel()
+        {   
+            Name = "Hôtel Bleu et Blanc",
+            Price = 68,
+            ImageSource = ImageSource.FromFile("febrian_zakaria2.jpg")
+        });
     }
 
     public ObservableCollection<FilterItemViewModel> Filters { get; } = [];
+    
+    public ObservableCollection<HostItemViewModel> PopularHosts { get; } = [];
 }
